@@ -1,0 +1,20 @@
+<article class="card1">
+	<div class="col-xs-12 col-md-8">
+		<!-- <h1><a href="companies/{{card.benId}}/report">{{card.name}}</a></h1> -->
+		<h1><a href="" ng-click=navigateReport(card)>{{card.name}}</a></h1>
+
+		<p class="blue">{{card.contact.city}} {{card.stateOfDomicile | stateMap}}</p>
+		<p>{{card.contact.address1}}</p><!-- <p>{{card.contact.phone}}</p>
+		<p>{{card.contact.city}}, {{card.contact.state}} {{card.contact.zip}}</p><p>{{card.contact.website}}</p> -->
+	</div>
+
+	<div class="col-xs-12 col-md-4">
+		<div class="preWrap"><div class="keys keyRating{{card.rating.keys | keyRating}}">
+			<div class="key1"></div>
+			<div class="key2"></div>
+			<div class="key3"></div>
+			<div class="key4"></div>
+			<div class="key5"></div>
+		</div></div>
+	</div>
+</article>

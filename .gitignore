@@ -1,0 +1,9 @@
+$ cat .gitignore
+
+node_modules/**/*
+logs/*
+!.gitkeep
+.idea
+test-results.xml
+coverage/
+*.iml

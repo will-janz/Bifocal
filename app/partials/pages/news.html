@@ -1,0 +1,22 @@
+<section class="title">
+	<div class="ribbon"></div>
+	<h1>News<!--  <img src="img/rss.png" alt="RSS" /> --></h1>
+	<p>Articles and resources relevant to the commercial real estate industry, including trends and legislative issues.</p>
+</section>
+<section class="content">
+	<!-- @TODO: Figure out how to integrate microdata here -->
+	<article ng-repeat="article in articles">
+		<img ng-src="img/{{article.img}}" alt="" />
+		<header>
+			<h4><a href="news/{{article.id}}">{{article.title}}</a></h4>
+		</header>
+		<div class="body">
+			<p>{{article.body}}</p>
+		</div>
+		<footer>
+			<h5>by {{article.author.name}}</h5>
+			<span>{{article.author.position}}</span>
+			<em>{{article.author.location}}</em>
+		</footer>
+	</article>
+</section>

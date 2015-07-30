@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "title": "Commercial Leasing Due Diligence; Best Practices and a Call to Action",
+        "date": "November 9, 2013",
+        "url": "newsArticle-1",
+        "author": {
+            "name": "Stuart B. Borne, Esq.",
+            "position": "Partner at Archer Bay, P.A.",
+            "location": "Denver, Colorado"
+        },
+        "body": "After 40 years in real estate and 27 years as a real estate attorney, I have seen everything there is to see in the commercial leasing realm. Today, I will teach you about screening commercial tenants.",
+        "img": "oc.png"
+    },
+    {
+        "id": 2,
+        "title": "Credit Scoring Commercial Tenants",
+        "date": "November 9, 2013",
+        "url": "newsArticle-2",
+        "author": {
+            "name": "Nathan F. Greenlee",
+            "position": "",
+            "location": "Denver, Colorado"
+        },
+        "body": "Pulling a credit report on a prospective commercial tenant is an essential part of a property owner or manager’s due diligence. Yet not all credit reports are created equal.",
+        "img": "oc.png"
+    },
+    {
+        "id": 3,
+        "title": "The Best Colorado Commercial Office Lease, Ever?",
+        "date": "November 9, 2013",
+        "url": "newsArticle-3",
+        "author": {
+            "name": "Chris Robbins",
+            "position": "Owner - Cherry Creek East Office Building",
+            "location": "Denver, Colorado"
+        },
+        "body": "What happens when you cross a retired lawyer and an office building owner?  It sounds like yet another bad lawyer joke, yet the answer might surprise you...",
+        "img": "oc.png"
+    }
+]

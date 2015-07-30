@@ -1,0 +1,120 @@
+/* Styles for desktops - min-width: 1200px */
+
+/* ------------------------------------------------------------
+		General
+------------------------------------------------------------ */
+	
+	/***** Cards *****/
+	article.card1 {
+		
+	}
+
+/* ------------------------------------------------------------
+		Header
+------------------------------------------------------------ */
+	
+	.container > header {
+	}
+	
+	/* Top navbar */
+	nav.main {
+		left: 15em;
+	}
+	
+	/** Side navbar **/
+	nav.side > ul > li > a {
+		font-size: 12pt;
+	}
+	
+/* ------------------------------------------------------------
+		Main body/view area
+------------------------------------------------------------ */
+
+	/***** Every page *****/
+	.container {
+		> .col-lg-2 {
+			width: 230px;
+			width: 15em;
+		}
+		
+		> .col-lg-10 {
+			width: 950px;
+			width: 60em;
+		}
+	}
+	
+	.searchArea {
+		height: 4em;
+		left: 15em;
+		
+		#results {
+			width: 80%;
+		}
+	}
+	
+	#view {
+		left: 15em;
+		min-height: 8em;
+		
+		.title {
+			height: 8.35em;
+		}
+	}
+	
+	#stretchy {
+		display: block;
+	}
+
+	/***** Home/landing page *****/
+	#view.home .title {
+		h1 {
+			line-height: 1;
+			margin-bottom: 0;
+		}
+		p {
+			padding-right: 12em;
+		}
+	}
+
+	/***** Company report page *****/
+	#view.companyReport {
+		
+		.title {
+			padding: 0 0 0 2em;
+		}
+		
+		.content {
+			> div {
+				overflow: hidden;
+				padding: 1em 1em 1em 2em;
+			}
+			
+			.entityInfo {
+				padding: 2em;
+				
+				.liney {
+					margin: .35em -1.8em .35em -2em;
+				}
+			}
+			
+			.keyRating {
+				.col-md-5 {
+				}
+			}
+			
+			.graphs {
+				padding: 0 1em 0 1.5em;
+				
+				> div {
+					
+					h2 {
+						font-size: 18pt;
+					}
+				}
+			}
+			
+			.payExperiences {
+				padding-left: 2em;
+			}
+		}
+	}

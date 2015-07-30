@@ -1,0 +1,62 @@
+<section class="content" style="min-height: 60em;">
+	<div class="banner"><div class="stripes">
+		<img src="img/whiteSeal.png" alt="Seal" />
+		<h1><span><div class="liney"></div><span>BEN PROVIDES</span></span> CREDIT CHECKING AND DUE DILIGENCE TOOLS FOR PROPERTY OWNERS AND MANAGERS</h1>
+	</div></div>
+	
+	<div class="steps">
+		<div class="col-xs-12 col-sm-4">
+			<div class="homeSprite credit"></div>
+			<h3><span>BEN CAN</span> <hr />Check Credit<hr /></h3>
+			<p>Ben's credit reports contain insights on prospective tenants</p>
+			<a href="cre/checkCredit" class="hidden-sm hidden-md hidden-lg">LEARN MORE</a>
+		</div>
+		<div class="col-xs-12 col-sm-4">
+			<div class="homeSprite key"></div>
+			<h3><span>BEN CAN</span> <hr />Screen Tenants<hr /></h3>
+			<p>Key Screen is our most powerful screening and due diligence tool</p>
+			<a href="cre/keyScreen" class="hidden-sm hidden-md hidden-lg">LEARN MORE</a>
+		</div>
+		<div class="col-xs-12 col-sm-4">
+			<div class="homeSprite rentRoll"></div>
+			<h3><span>BEN CAN</span> <hr />Certify Rent Rolls<hr /></h3>
+			<p>Rent roll certification determines if your cast flow is at risk</p>
+			<a href="cre/rentRoll" class="hidden-sm hidden-md hidden-lg">LEARN MORE</a>
+		</div>
+		
+		<div class="alt-buttons visible-sm visible-md visible-lg col-xs-12">
+			<div class="col-sm-4">
+				<a href="cre/checkCredit">LEARN MORE</a>
+			</div>
+			<div class="col-sm-4">
+				<a href="cre/keyScreen">LEARN MORE</a>
+			</div>
+			<div class="col-sm-4">
+				<a href="cre/rentRoll">LEARN MORE</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="dyn col-xs-12 col-md-4">
+		<h2>Did you know?</h2>
+		<img src="img/cityScape.png" alt="City birds eye view" />
+
+		<ul>
+			<li>Over 90% of tenant defaults were by businesses that were never screened</li>
+			<li>That it costs more to evict a bad tenant, re-rent, and re-improve a suite than to rent to a higher quality tenant the first time</li>
+		</ul>
+	</div>
+
+	<div class="news col-xs-12 col-md-4">
+		<h2>News</h2>
+		<article ng-repeat="article in news | limitTo:5">
+			<h3><a ng-href="news/{{article.id}}">{{article.title}}</a></h3>
+			<span>{{article.date}}</span>
+		</article>
+	</div>
+	
+	<div class="social col-xs-12 col-md-4">
+		<h2>Social</h2>
+		<div twitter-timeline="406473755175555072" auto-resize="true" data-tweet-limit="3">Loading tweets...</div>
+	</div>
+</section>

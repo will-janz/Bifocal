@@ -1,0 +1,66 @@
+<h1>Account page</h1>
+
+<section class="details col-sm-4">
+	<h2>Details</h2>
+
+	<img src="" alt="banner" />
+
+	<button>ENHANCE MY STANDING</button>
+	<button>ENDORSE A COMPANY</button>
+</section>
+
+<section class="billing col-sm-4">
+	<h2>Billing</h2>
+
+	<h3>Account Status</h3>
+	<p>You are currently on the <b>{{data.accountPlan}}</b> plan and your account is up to date.</p>
+
+	<h3>Make a Payment</h3>
+	<button>PAY BEN</button>
+</section>
+
+<section class="settings col-sm-4">
+	<h2>Settings</h2>
+
+	<h3>Change Email</h3>
+	<form name="newEmailForm" class="no-labels" ng-submit="changeEmail(newEmailData)">
+		<label for="newEmail" class="sr-only">NEW EMAIL ADDRESS</label>
+		<input type="email" id="newEmail" name="newEmail" ng-model="newEmailData.newEmail" placeholder="NEW EMAIL ADDRESS" required />
+
+		<label for="newEmail2" class="sr-only">RE-ENTER NEW EMAIL ADDRESS</label>
+		<input type="email" id="newEmail2" name="newEmail2" ng-model="newEmailData.newEmail2" placeholder="RE-ENTER NEW EMAIL ADDRESS" required />
+
+		<input type="submit" ng-diabled="newEmailForm.$invalid" value="CONFIRM" />
+	</form>
+
+	<h3>Change Password</h3>
+	<form name="newPasswordForm" class="no-labels" ng-submit="changePassword(newPasswordData)">
+		<label for="newPassword" class="sr-only">NEW PASSWORD</label>
+		<input type="password" id="newPassword" name="newPassword" ng-model="newPasswordData.newPassword" placeholder="NEW PASSWORD" required />
+
+		<label for="newPassword2" class="sr-only">RE-ENTER NEW PASSWORD</label>
+		<input type="password" id="newPassword2" name="newPassword2" ng-model="newPasswordData.newPassword2" placeholder="RE-ENTER NEW PASSWORD" required />
+
+		<input type="submit" ng-diabled="newPasswordForm.$invalid" value="CONFIRM" />
+	</form>
+</section>
+
+<hr />
+
+<section class="companyNews col-sm-4">
+	<div class="newsBox">
+		<h4>Company News</h4>
+	</div>
+</section>
+
+<section class="verticalNews col-sm-4">
+	<div class="newsBox">
+		<h4>Vertical News</h4>
+	</div>
+</section>
+
+<section class="geographicNews col-sm-4">
+	<div class="newsBox">
+		<h4>Geographic News</h4>
+	</div>
+</section>

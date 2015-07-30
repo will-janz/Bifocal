@@ -1,0 +1,6 @@
+# file contains build commands for drone.io CI build automation.
+
+sudo npm -d install
+cd scripts
+./ci_test.sh
+./checkCoverage.sh

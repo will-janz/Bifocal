@@ -1,0 +1,49 @@
+<section class="title">
+	<div class="ribbon"></div>
+	<h1>Welcome to Open Book Ben</h1>
+	<p>To manage your companies and obtain the most complete data on other companies, register for an account with Ben. Or if you're already with Ben, sign in here.</p>
+</section>
+<section class="content">
+	<h2>Credit data on nearly every US company</h2>
+	<strong>Will my customer pay? Will he pay on time? What does my company's credit look like? Can this vendor deliver what it promised?</strong>
+
+	<p>Ben usually knows. We have credit data on nearly every company in the United States. We also offer something different: The opportunity for every company to participate in our system, share experiences, and obtain valuable information, often for free.</p>
+
+	<b>Try Ben today. Join now.</b>
+	
+	<hr />
+	
+	<form class="col-xs-12 col-sm-5">
+		<h2>Sign in</h2>
+		
+		<div class="error" ng-show="loginError">{{loginError}}</div>
+		<div class="wrapper"><input type="email" 	placeholder="EMAIL" 	ng-model="user.email"    required/></div>
+		<div class="wrapper"><input type="password" placeholder="PASSWORD" 	ng-model="user.password" required/></div>
+		
+		<!-- @TODO: make a recovery page and controller -->
+		<a href="recover">FORGOT YOUR PASSWORD?</a>
+		
+		<div class="buttons">
+			<div class="wrapper"><input type="submit" value="SIGN IN" ng-click="login(user)"/></div>
+		</div>
+	</form>
+	
+	<form class="col-xs-12 col-sm-5 col-sm-offset-1" name="registerForm" ng-submit="register(newUser)">
+		<h2>Join</h2>
+		
+		<div class="error" ng-show="joinError">{{joinError}}</div>
+		<div class="wrapper"><input type="email" 	placeholder="EMAIL" 			ng-model="newUser.email"	 required/></div>
+		
+		<div class="wrapper"><input type="password" placeholder="PASSWORD" 			ng-model="newUser.password" required /></div>
+		<div class="wrapper"><input type="password" placeholder="CONFIRM PASSWORD" 	ng-model="newUser.password2" required password-match="newUser.password" name="password2" /></div>
+		<div class="error" ng-show="registerForm.password2.$error.unique">Passwords must match.</div>
+		
+		<div class="wrapper"><div tos></div></div>
+		
+		<label>I AGREE TO THE TERMS OF SERVICE <input type="checkbox" ng-model="newUser.agree" required/></label>
+		
+		<div class="buttons">
+			<div class="wrapper"><input type="submit" value="JOIN" ng-disabled="!newUser.agree || registerForm.password2.$error.unique || !newUser.password2" /></div>
+		</div>
+	</form>
+</section>

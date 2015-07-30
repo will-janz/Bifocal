@@ -1,0 +1,22 @@
+<section class="title">
+	<div class="ribbon"></div>
+	<h1>News</h1>
+	<p>Articles and resources relevant to the commercial real estate industry, including trends and legislative issues.</p>
+</section>
+<article class="content">
+
+	<header>
+		<nav role="navigation">
+			<a href="news/{{article.id - 1}}" ng-hide="article.id - 1 < 1">&lt; Previous</a>
+			<a href="news/{{article.id + 1}}" ng-hide="article.id + 1 > articleCount">Next &gt;</a>
+		</nav>
+		
+		<h4>{{article.title}}</h4>
+		<h5>by {{article.author.name}}</h5>
+		<p>{{article.author.position}}</p>
+		<em>{{article.author.location}}</em>
+	</header>
+	
+	<div class="body" ng-include src="articleUrl">
+	</div>
+</article>

@@ -1,0 +1,194 @@
+<section class="title clear">
+	<img src="img/unverifiedAccountRibbon.png" alt="ribbon" />
+	
+	<div>
+		<h1>{{report.company.name}}</h1>
+		<p ng-hide="report.company.dbas == ''">Also known as: {{report.company.dbas}}</p>
+		
+		<div class="actions">
+			<div class="col-xs-12 col-lg-4">
+				<!--<a href="" class="claim" ng-click="toggleFollow('myCompany')" ng-show="Site.user.isLoggedIn">CLAIM AS MY COMPANY</a>-->
+                <a href="" class="claim" ng-click="toggleFollow('myCompany')">CLAIM AS MY COMPANY</a>
+			</div>
+
+			<div class="col-xs-12 col-lg-8" ng-show="Site.user.isLoggedIn">
+				<form>
+					<input id="myCustomer" class="css-checkbox" type="checkbox" ng-model="myCustomerChecked" ng-click="toggleFollow('myCustomer')"/>
+					<label for="myCustomer" name="myCustomer" class="css-label">MY CUSTOMER</label>
+					<input id="myVendor" class="css-checkbox" type="checkbox" ng-model="myVendorChecked" ng-click="toggleFollow('myVendor')"/>
+					<label for="myVendor" name="myVendor" class="css-label">MY VENDOR</label>
+					<input id="myFavorite" class="css-checkbox" type="checkbox" ng-model="myFavoriteChecked" ng-click="toggleFollow('myFavorite')"/>
+					<label for="myFavorite" name="myFavorite" class="css-label">MY FAVORITE</label>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- for growl notification -->
+<div growl></div>
+
+<div class="content">
+	<nav class="navbar companyReport" role="navigation">
+		<ul class="nav navbar-nav hidden-xs">
+			<li><a ng-click="setSubPage('Summary')" 				ng-class="{activeF: subPage=='Summary'}"><span>SUMMARY</span></a></li>
+			<li><a ng-click="setSubPage('Principal Backgrounds')" 	ng-class="{activeF: subPage=='Principal Backgrounds'}"><span>PRINCIPAL BACKGROUNDS</span></a></li>
+			<li><a ng-click="setSubPage('Payment Experience')" 		ng-class="{activeF: subPage=='Payment Experience'}"><span>PAYMENT EXPERIENCE</span></a></li>
+			<li><a ng-click="setSubPage('Public Filings')" 			ng-class="{activeF: subPage=='Public Filings'}"><span>PUBLIC FILINGS</span></a></li>
+		</ul>
+		
+		<ul class="nav navbar-nav visible-xs">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="" onClick="return false;">{{subPage}} <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a ng-click="setSubPage('Summary')" 				ng-class="{activeF: subPage=='Summary'}"><span>SUMMARY</span></a></li>
+					<li><a ng-click="setSubPage('Principal Backgrounds')" 	ng-class="{activeF: subPage=='Principal Backgrounds'}"><span>PRINCIPAL BACKGROUNDS</span></a></li>
+					<li><a ng-click="setSubPage('Payment Experience')" 		ng-class="{activeF: subPage=='Payment Experience'}"><span>PAYMENT EXPERIENCE</span></a></li>
+					<li><a ng-click="setSubPage('Public Filings')" 			ng-class="{activeF: subPage=='Public Filings'}"><span>PUBLIC FILINGS</span></a></li>
+				</ul>
+			</li>
+		</ul>		
+	</nav>
+	
+	<div class="summary" ng-show="subPage == 'Summary'">
+		<!-- Entity information and alert -->
+		<section class="entityInfo col-xs-12 col-md-5">
+			<strong>ADDRESS:</strong><p>{{report.company.contact.address1}}</p>
+	        <!-- we aren't getting these broken apart at this time -->
+	        <!--<br />{{report.company.contact.city}}, {{report.company.contact.state}} {{report.company.contact.zip}}</p>-->
+			<strong>PHONE:</strong><p>{{report.company.contact.phone}}</p>
+			<strong>WEB:</strong><p>{{report.company.contact.website}}</p>
+			<strong>EMAIL:</strong><p>{{report.company.contact.email}}</p>
+			<strong>BEN'S NUMBER:</strong><p>{{report.company.benId}}</p>
+			<strong>TAX/ID NUMBER:</strong><p>{{report.company.federalEIN}}</p>
+			<strong>DATE FOUNDED:</strong><p>{{report.company.dateFounded}}</p>
+			<strong>EMPLOYEES:</strong><p>{{report.company.rating.employees}}</p>
+			<strong>STATUS:</strong><p>{{report.company.status}}</p>
+			<!--<strong>SIC CODE:</strong><p>{{report.company.sicCodes}}</p>-->
+	        <strong>SIC CODE:</strong><p></p> <!-- won't have this for alpha -->
+			<strong>STATES OF DOMICILE:</strong><p>{{report.company.stateOfDomicile}}</p>
+			
+			<h4 class="liney">
+				<span>ALERTS</span>
+				<div></div>
+			</h4>
+			<ul>
+				<li ng-repeat="alert in report.alerts">{{alert}}</li>
+			</ul>
+		</section>
+		
+		<!-- Key rating and score scale -->
+		<section class="keyRating col-xs-12 col-md-7">
+			<div class="col-xs-12 col-md-7">
+				<!-- @TODO: make a filter changing decimals to valid class names (4.5 -> 4-5) -->
+				<div class="keys dark keyRating{{report.company.rating.keys | keyRating}}">
+					<div class="key1"></div>
+					<div class="key2"></div>
+					<div class="key3"></div>
+					<div class="key4"></div>
+					<div class="key5"></div>
+				</div>
+				<div class="scoreRibbon">
+					<img src="img/keyRibbon.png" alt="Score: {{report.company.rating.keys}}" class="img-responsive" />
+					<span>{{report.company.rating.overall}}</span>
+				</div>
+			</div>
+			
+			<div class="col-xs-12 col-md-5">
+				<p><strong>Ben gives {{report.company.name}} a key rating of {{report.company.rating.keys}}/5,</strong> corresponding to a {{report.company.rating.overall}}/100 score.</p>
+                <p>This report is an alpha product. It has not been sold or released to the public. It may not be used or relied upon in any way. If you come into possession of this report, please destroy it and contact Nathan Greenlee at Open Book Ben: nate@openbookben.com</p>
+			</div>
+			
+			<div class="scoreScale col-xs-12">
+				<h4 class="liney">
+					<span>SCORE SCALE</span>
+					<div></div>
+				</h4>
+				<div class="scoreScaleChart">
+					<d3-detailedscorechart data="score1"></d3-detailedscorechart>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Graphs -->
+		<section class="graphs col-xs-12">
+			<div class="col-xs-12 col-md-4">
+				<h2>Risk Summary</h2>
+				<div class="graphBox riskSummary"><div>
+					<p>Possibility this company will not pay on time over the next 12 months:</p>
+					<d3-simplescorechart data="score2"></d3-simplescorechart>
+				</div></div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<h2>Debt to Income Ratio</h2>
+				<div class="graphBox"><div>
+					<img src="img/debtToIncomeRatio.png" alt="payment history graph" class="img-responsive" />
+				</div></div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<h2>Payment History</h2>
+				<div class="graphBox"><div>
+					<img src="img/paymentHistory.png" alt="payment history graph" class="img-responsive" />
+				</div></div>
+			</div>
+		</section>
+		
+		<!-- Pay experiences -->
+		<section class="payExperiences col-xs-12">
+			<h2>Pay Experiences (0) <a href="submitPayExperience">SUBMIT A PAY EXPERIENCE</a></h2>
+			
+			<p>There are presently no registered Pay Experiences.</p>
+		</section>
+	</div>
+	
+	<div class="principalBackgrounds" ng-show="subPage == 'Principal Backgrounds'">
+		<div ng-show="Site.user.isLoggedIn">
+			<h1>Principal Backgrounds</h1>
+			
+			<article ng-repeat="PB in report.principals" class="col-xs-12 col-sm-6 col-md-4">
+				<p>{{PB.person.name}}</p>
+				<b>{{PB.title}}</b>
+			</article>
+		</div>
+		<div ng-hide="Site.user.isLoggedIn" class="loginMsg">
+			<h3>YOU ARE NOT CURRENTLY LOGGED IN</h3>
+			<h2>This information is available to members only.<br />
+			Click below to join today for free.</h2>
+			
+			<div class="wrapper"><a href="home">JOIN FOR FREE</a></div>
+		</div>
+	</div>
+	
+	<div class="paymentExperience" ng-show="subPage == 'Payment Experience'">
+		<div ng-show="Site.user.isLoggedIn">
+			<h1>Payment Experiences</h1>
+		</div>
+		<div ng-hide="Site.user.isLoggedIn" class="loginMsg">
+			<h3>YOU ARE NOT CURRENTLY LOGGED IN</h3>
+			<h2>This information is available to members only.<br />
+			Click below to join today for free.</h2>
+			
+			<div class="wrapper"><a href="home">JOIN FOR FREE</a></div>
+		</div>
+	</div>
+	
+	<div class="publicFilings" ng-show="subPage == 'Public Filings'">
+		<div ng-show="Site.user.isLoggedIn">
+			<h1>Public Filings</h1>
+			
+			<article ng-repeat="PF in report.publicFilings" class="col-xs-12 col-sm-6 col-md-4">
+				<b>{{PF.description}}</b>
+				<p>{{PF.filingDate}}</p>
+			</article>
+		</div>
+		<div ng-hide="Site.user.isLoggedIn" class="loginMsg">
+			<h3>YOU ARE NOT CURRENTLY LOGGED IN</h3>
+			<h2>This information is available to members only.<br />
+			Click below to join today for free.</h2>
+			
+			<div class="wrapper"><a href="home">JOIN FOR FREE</a></div>
+		</div>
+	</div>
+</div>
+
+

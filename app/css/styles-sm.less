@@ -1,0 +1,215 @@
+/* Styles for tablets - min-width: 768px */
+
+/* ------------------------------------------------------------
+		General
+------------------------------------------------------------ */
+	form {
+		> .wrapper {
+		}
+
+		.buttons {
+			.wrapper {
+				display: inline-block;
+				width: auto;
+			}
+
+			input[type=submit],
+			input[type=button],
+			button {
+				width: auto;
+			}
+		}
+	}
+
+/* ------------------------------------------------------------
+		Header
+------------------------------------------------------------ */
+	.container > header {
+		border-right: 1px solid @gray;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+	}
+
+	/* Top navbar */
+	nav.main {
+		height: 2.625em;
+		left: 25%;
+	}
+	nav.main ul li {
+		a {
+			font-size: 10pt;
+
+			&:after {
+				border-right: .1em solid @blue;
+				content: ' ';
+				height: 50%;
+				position: absolute;
+				right: -.075em;
+				top: 25%;
+			}
+		}
+	}
+	nav.main ul.navButtons li a {
+		.gotham(500);
+		background-color: @blue;
+		font-size: 80%;
+		margin: .75em .2em;
+		padding: .1em .5em;
+		width: 9em;
+		letter-spacing: 0;
+
+		&:after {
+			display: none;
+		}
+
+		&[href=account] {
+			background: @darkBlue;
+		}
+	}
+
+	/* Side navbar */
+	nav.main ul li:last-child a:after,
+	nav.main ul li a.active:after,
+	nav.main ul li a:hover:after {
+		border-right: none;
+	}
+	nav.side > ul > li > a {
+		font-size: 10.5pt;
+	}
+
+
+/* ------------------------------------------------------------
+		Main body/view area
+------------------------------------------------------------ */
+	
+	.searchArea {
+		left: 25%;
+		
+		form {
+			position: absolute;
+			right: 1em;
+			bottom: 0;
+			margin-bottom: 0;
+
+			input[type=text] {
+				width: 15em;
+				margin: 0;
+				display: inline;
+			}
+
+			select {
+				width: 13em;
+				margin: 0;
+			}
+		}
+	}
+
+
+	#view {
+		left: 25%;
+		
+		.title {
+			padding-left: 1.75em;
+		}
+		
+		.content {
+			padding: 1.75em 1em 1em 1.75em;
+		}
+	}
+
+
+	/***** CRE home/landing page *****/
+		#view.cre_home {
+			
+			.banner {
+				.stripes {
+					padding-left: 5%;
+					padding-right: 5%;
+				}
+			}
+
+			.steps > div {
+				> p {
+					/*font-size: 9pt;*/
+				}
+				> a {
+					// font-size: 8pt;
+				}
+			}
+			
+			.news article h3 {
+				font-size: 12pt;
+			}
+		}
+
+	/***** News page *****/
+	#view.news {
+		.content {
+			article {
+				> img {
+					float: left;
+					max-width: 11em;
+				}
+
+				header,
+				.body,
+				footer {
+					margin-left: 11.5em;
+				}
+				footer span {
+					padding: 0 .5em;
+					border-left: 1px solid @gray;
+					border-right: 1px solid @gray;
+				}
+			}
+		}
+	}
+
+	/***** Pricing page *****/
+	#view.pricing {
+		.col-md-4 {
+			ul {
+			}
+		}
+	}
+
+	/***** Buy page *****/
+	#view.buy {
+		form {
+			max-width: 45em;
+			.wrapper {
+				width: 48%;
+				margin-left: 1%;
+				margin-right: 1%;
+				float: left;
+
+				&.full {
+					width: 98%;
+				}
+			}
+
+			textarea {
+				min-height: 10em;
+				max-width: 100%;
+			}
+
+
+			.spacer {
+				margin: .5em;
+				width: 100%;
+				float: left;
+			}
+
+			.buttons {
+				clear: both;
+				padding-bottom: .5em;
+
+				.wrapper {
+					width: auto;
+					float: right;
+				}
+			}
+		}
+	}
