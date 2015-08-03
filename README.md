@@ -48,7 +48,7 @@ Test coverage output should land in /coverage/Phantom JS 1.9.2 (Linux)/index.htm
 * Fusion-ha CSS files and JS files
 
 ## Continuous Integration Build
-Bifocals uses Drone.Io. Sign up for an accout using your bitbucket account.
+Bifocals uses Drone.Io. Sign up for an account using your bitbucket account.
 The following fies relate to the CI build:
 * scripts/checkCoverage.sh
 * scripts/ci_test.sh
